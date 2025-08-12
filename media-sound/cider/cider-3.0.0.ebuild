@@ -73,7 +73,7 @@ src_install() {
 		/opt/Cider/lib/cider/libvulkan.so.1
 	use suid && fperms u+s,+x /opt/Cider/lib/cider/chrome-sandbox
 
-	dosym ../Cider/bin/cider usr/bin/cider
+	dosym /opt/Cider/bin/cider /usr/bin/cider
 
 	pax-mark -m "${ED}"/opt/Cider/cider
 }
