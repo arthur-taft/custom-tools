@@ -1,4 +1,4 @@
-# Copyright 1999-2024 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -58,20 +58,6 @@ pkg_nofetch() {
 	einfo "${HOMEPAGE}"
 	einfo "and place it into your DISTDIR directory"
 }
-
-#src_prepare() {
-#	default
-#	pushd lib/cider/locales || die "pushd failed"
-#	chromium_remove_language_paks
-#	popd || die "popd failed"
-#
-#	rm lib/cider/LICENSES.chromium.html \
-#		|| die "rm licenses failed"
-#
-#	if ! use suid ; then
-#		rm lib/cider/chrome-sandbox || die "rm failed"
-#	fi
-#}
 
 src_install() {
 	doicon usr/lib/cider/resources/public/icon.png
