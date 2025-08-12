@@ -22,6 +22,7 @@ RDEPEND="$(python_gen_cond_dep '
 	dev-python/pyserial[${PYTHON_USEDEP}]
 	dev-python/requests[${PYTHON_USEDEP}]
 	dev-python/six[${PYTHON_USEDEP}]
+	dev-python/lark[${PYTHON_USEDEP}]
 	gui? (
 		dev-python/suds-community[${PYTHON_USEDEP}]
 		dev-python/wxpython:4.0[${PYTHON_USEDEP}]
