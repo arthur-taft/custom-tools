@@ -60,12 +60,6 @@ pkg_nofetch() {
 }
 
 src_install() {
-	doicon usr/lib/cider/resources/public/icon.png
-	dosym usr/lib/cider/resources/public/icon.png \
-		/usr/share/pixmaps/cider.png
-
-	domenu usr/share/applications/cider.desktop
-
 	insinto /opt/Cider
 	doins -r usr/.
 	fperms -R +x /opt/Cider/bin/cider /opt/Cider/lib/cider/chrome_crashpad_handler \
@@ -73,7 +67,10 @@ src_install() {
 		/opt/Cider/lib/cider/libvulkan.so.1
 	use suid && fperms u+s,+x /opt/Cider/lib/cider/chrome-sandbox
 
+	domenu /opt/Cider/share/applications/cider.desktop
 	dosym /opt/Cider/bin/cider /usr/bin/cider
+	dosym /opt/Cider/lib/cider/resources/public/icon.png /usr/share/pixmaps/cider.png
+	newicon -s 256 /opt/Cider/lib/cider/resources/public/icon.png cider.png
 
 	pax-mark -m "${ED}"/opt/Cider/cider
 }
