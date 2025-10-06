@@ -12,7 +12,7 @@ inherit chromium-2 desktop multilib-build pax-utils unpacker xdg
 
 DESCRIPTION="A new cross-platform Apple Music experience based on Electron"
 HOMEPAGE="https://cider.sh"
-SRC_URI="cider-v3.0.0-linux-x64.pkg.tar.zst"
+SRC_URI="${P}-linux-x64.pkg.tar.zst"
 S="${WORKDIR}"
 
 LICENSE="all-rights-reserved"

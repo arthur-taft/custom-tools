@@ -7,7 +7,7 @@ EAPI=8
 
 DESCRIPTION="Cryptography cracker and embedder"
 HOMEPAGE="https://github.com/RickdeJager/stegseek"
-SRC_URI="https://github.com/RickdeJager/stegseek/archive/refs/tags/v0.6.tar.gz"
+SRC_URI="https://github.com/RickdeJager/stegseek/archive/refs/tags/v${PV}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"

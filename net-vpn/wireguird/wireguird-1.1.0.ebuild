@@ -5,7 +5,7 @@ EAPI=8
 
 DESCRIPTION="Wireguard GTK GUI for Linux"
 HOMEPAGE="https://github.com/UnnoTed/wireguird"
-SRC_URI="https://github.com/UnnoTed/wireguird/releases/download/v1.1.0/wireguird_amd64.deb"
+SRC_URI="https://github.com/UnnoTed/wireguird/releases/download/v${PV}/${PN}_amd64.deb"
 
 LICENSE="MIT"
 SLOT="0"
