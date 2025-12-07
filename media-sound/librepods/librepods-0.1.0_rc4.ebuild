@@ -3,9 +3,13 @@
 
 EAPI=8
 
+inherit cmake
+
+CORRECTED_PV="${PV/_rc/-rc.}"
+
 DESCRIPTION="AirPods Liberated from Apple's Ecosystem"
 HOMEPAGE="https://github.com/kavishdevar/librepods"
-SRC_URI="https://github.com/kavishdevar/${PN}/releases/download/v${PV}/LibrePods-v${PV}.zip"
+SRC_URI="https://github.com/kavishdevar/${PN}/archive/refs/tags/v${CORRECTED_PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -19,3 +23,11 @@ DEPEND="dev-build/cmake
 	media-libs/libpulse"
 RDEPEND="${DEPEND}"
 BDEPEND=""
+
+S="${WORKDIR}/${PN}-${CORRECTED_PV}/linux"
+
+src_prepare() {
+	sed -i 's/applinux/librepods/g' CMakeLists.txt || die "failed to rename binary"
+
+	cmake_src_prepare
+}
