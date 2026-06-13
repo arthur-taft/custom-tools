@@ -60,17 +60,17 @@ pkg_nofetch() {
 }
 
 src_install() {
-	insinto /opt/Cider
+	insinto /opt/cider
 	doins -r usr/.
-	fperms -R +x /opt/Cider/bin/cider /opt/Cider/lib/cider/chrome_crashpad_handler \
-		/opt/Cider/lib/cider/lib{EGL,GLESv2,ffmpeg,vk_swiftshader}.so \
-		/opt/Cider/lib/cider/libvulkan.so.1
-	use suid && fperms u+s,+x /opt/Cider/lib/cider/chrome-sandbox
+	fperms -R +x /opt/cider/bin/cider /opt/cider/lib/cider/chrome_crashpad_handler \
+		/opt/cider/lib/cider/lib{EGL,GLESv2,ffmpeg,vk_swiftshader}.so \
+		/opt/cider/lib/cider/libvulkan.so.1
+	use suid && fperms u+s,+x /opt/cider/lib/cider/chrome-sandbox
 
-	domenu /opt/Cider/share/applications/cider.desktop
-	dosym /opt/Cider/bin/cider /usr/bin/cider
-	dosym /opt/Cider/lib/cider/resources/public/icon.png /usr/share/pixmaps/cider.png
-	newicon -s 256 /opt/Cider/lib/cider/resources/public/icon.png cider.png
+	domenu /opt/cider/share/applications/cider.desktop
+	dosym /opt/cider/bin/cider /usr/bin/cider
+	dosym /opt/cider/lib/cider/resources/public/icon.png /usr/share/pixmaps/cider.png
+	newicon -s 256 /opt/cider/lib/cider/resources/public/icon.png cider.png
 
-	pax-mark -m "${ED}"/opt/Cider/cider
+	pax-mark -m "${ED}"/opt/cider/cider
 }

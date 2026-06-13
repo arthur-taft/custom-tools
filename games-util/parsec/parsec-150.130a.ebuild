@@ -6,7 +6,7 @@ EAPI=8
 inherit unpacker
 
 DESCRIPTION="Simple, low-latency game streaming"
-HOMEPAGE="https://parsecgaming.com/"
+HOMEPAGE="https://parsec.app/"
 SRC_URI="https://builds.parsec.app/package/parsec-linux.deb -> ${P}.deb"
 
 LICENSE="Parsec-EULA"
